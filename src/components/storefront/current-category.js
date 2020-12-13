@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Dependancies
-import {If, Then, When } from 'react-if';
+import {When } from 'react-if';
 import { connect } from 'react-redux';
 
 // Material UI Dependancies

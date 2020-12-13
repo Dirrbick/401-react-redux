@@ -2,7 +2,6 @@ const initialState = {
   categoryList: [
     { _id: 23456, name: "Coding Classes", description: "List of Coding Classes" },
     { _id: 12345, name: "Food", description: "List of Foods" },
-    { _id: 12345, name: "Make Up", description: "List of Foods" },
   ],
   activatedCategory: '',
   activatedDescription: '',

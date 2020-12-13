@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // Material UI dependancies
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
@@ -8,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-// import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   header: {
@@ -36,7 +35,7 @@ export default function Header(props) {
           <Grid container>
             <Grid item xs>
               {/* TODO: Make button go to home */}
-              <Button>
+              <Button component={Link} to="/">
                 <Typography variant="h2" color="inherit">
                   OUR STORE
                 </Typography>
@@ -44,7 +43,7 @@ export default function Header(props) {
             </Grid>
             <Grid item xs className={styles.button}>
               {/* TODO: Create something dynamic for how many items in Cart */}
-              <Button >Cart (0)</Button> 
+              <Button>Cart (0)</Button>
             </Grid>
           </Grid>
         </ToolBar>

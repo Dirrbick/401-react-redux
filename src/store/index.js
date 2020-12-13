@@ -1,12 +1,12 @@
 import { createStore, combineReducers } from 'redux';
 
 import categoriesReducer from './categories.js';
-// import productsReducer from './products.js';
+import productsReducer from './products.js';
 // import cartReducer from './cart.js';
 
 const reducers = combineReducers({
   categories: categoriesReducer,
-  // products: productsReducer,
+  products: productsReducer,
   // cart: cartReducer
 });
 

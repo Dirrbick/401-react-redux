@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Categories from './categories.js';
-// import Products from './products.js';
+import Products from './products.js';
 import CurrentCategory from './current-category.js';
 
 // TODO: Create a user friendly UI that is appealing to the eye
@@ -11,7 +11,7 @@ export default function Storefront() {
     <>
       <Categories />
       <CurrentCategory />
-      {/* <Products /> */}
+      <Products />
 
     </>
   )

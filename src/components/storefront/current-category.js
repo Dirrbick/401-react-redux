@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Dependancies
-import { When } from 'react-if';
+import {If, Then, When } from 'react-if';
 import { connect } from 'react-redux';
 
 // Material UI Dependancies
@@ -27,21 +27,19 @@ const useStyles = makeStyles((theme) => ({
 
 const CurrentCategory = (props) => {
 
-  // console.log(props, 'activated category')
-  // console.log(props.description, 'props.description')
   const classes = useStyles();
 
+  const { activatedDescription, activatedCategory } = props;
 
   return (
-    <When condition={!!props.activedCategory} >
+    <When condition={!!activatedCategory} >
       <div>
         <Container maxWidth='sm'>
           <Typography variant='h3' component='h1' className={classes.category} gutterBottom>
-            {props.activedCategory}
+            {activatedCategory}
           </Typography>
           <Typography variant='h5' className={classes.details} paragraph>
-            {/* {props.description} */}
-            Description will go here....
+            {activatedDescription}
           </Typography>
         </Container>
       </div>
@@ -51,8 +49,8 @@ const CurrentCategory = (props) => {
 
 // found at https://blog.logrocket.com/react-redux-connect-when-and-how-to-use-it-f2a1edab2013/
 const mapStateToProps = state => ({
-  categoryList: state.categories.description,
-  activedCategory: state.categories.activedCategory,
+  activatedDescription: state.categories.activatedDescription,
+  activatedCategory: state.categories.activatedCategory,
 });
 
 export default connect(mapStateToProps)(CurrentCategory);

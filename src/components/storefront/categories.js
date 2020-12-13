@@ -17,15 +17,15 @@ function Categories() {
   const category = useSelector((state) => state.categories.categoryList);
 
   
-  const activate = (category) => {
-    dispatch(action.activated(category))
+  const activate = (category, description) => {
+    dispatch(action.activated(category, description))
   }
 
   return (
     <div>
       <Typography>Browse our Categories</Typography>
       {category.map((item) => {
-        return <Button key={item._id} onClick={() => activate(item.name)}>{ item.name }</Button>
+        return <Button key={item._id} onClick={() => activate(item.name, item.description)}>{ item.name }</Button>
       })}
     </div>
   );

@@ -1,10 +1,11 @@
 const initialState = {
   categoryList: [
-    { _id: 23456, name: "coding", description: "maybe?" },
-    { _id: 12345, name: "nothing", description: "maybe?" },
-    { _id: 34532, name: "testing", description: "maybe?" },
+    { _id: 23456, name: "Coding Classes", description: "List of Coding Classes" },
+    { _id: 12345, name: "Food", description: "List of Foods" },
+    { _id: 12345, name: "Make Up", description: "List of Foods" },
   ],
-  activedCategory: '',
+  activatedCategory: '',
+  activatedDescription: '',
 }
 
 export default function reducer(state = initialState, action) {
@@ -14,7 +15,7 @@ export default function reducer(state = initialState, action) {
     case "INITIALIZE":
       return initialState;
     case "ACTIVATED":
-      return {...state, activedCategory: payload}
+      return {...state, activatedCategory: payload.category, activatedDescription: payload.description}
     default:
       return state;
   }
@@ -26,9 +27,12 @@ export const initialize = () => {
     type: 'INITIALIZE',
   }
 }
-export const activated = (category) => {
+export const activated = (category, description) => {
   return {
     type: "ACTIVATED",
-    payload: category,
+    payload: {
+      category,
+      description
+    }
     };
 };
